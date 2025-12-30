@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Summer Yacht Party Series — RSVP</title>
+  <meta name="description" content="A sunset-soaked yacht party series with DJs + live performances. Limited spots. Reserve with a deposit." />
+
+  <style>
+    :root{
+      --bg: #070615;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.58);
+
+      --orange:#ff7a18;
+      --pink:#ff3ea5;
+      --purple:#7c3aed;
+      --blue:#22d3ee;
+
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --radius2: 14px;
+
+      --max: 1140px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 15% 0%, rgba(124,58,237,.25), transparent 55%),
+        radial-gradient(1000px 700px at 85% 10%, rgba(34,211,238,.20), transparent 60%),
+        radial-gradient(1000px 900px at 50% 95%, rgba(255,62,165,.18), transparent 55%),
+        linear-gradient(180deg, #05040f 0%, #070615 25%, #05040f 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 90px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 2px 10px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+    }
+    .mark{
+      width:34px; height:34px; border-radius:12px;
+      background: conic-gradient(from 210deg, var(--orange), var(--pink), var(--purple), var(--blue), var(--orange));
+      box-shadow: 0 10px 30px rgba(255,62,165,.18);
+    }
+    .nav .links{display:flex; gap:16px; color:var(--muted2); font-size:14px}
+    .nav .links a{opacity:.9; text-decoration:none}
+    .nav .links a:hover{opacity:1; text-decoration:underline}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      margin-top:14px;
+      border:1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(120deg, rgba(255,122,24,.18), rgba(255,62,165,.12), rgba(124,58,237,.14), rgba(34,211,238,.10));
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      /* Replace this with one of your generated images */
+      background-image: url("YOUR_IMAGE_HERO.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.08) contrast(1.02);
+      transform: scale(1.04);
+      opacity:.82;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 500px at 20% 20%, rgba(255,122,24,.20), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(34,211,238,.18), transparent 55%),
+        linear-gradient(180deg, rgba(7,6,21,.20) 0%, rgba(7,6,21,.72) 55%, rgba(7,6,21,.92) 100%);
+    }
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      padding:34px;
+    }
+    .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      border-radius:999px;
+      font-size:13px;
+      color:rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: linear-gradient(120deg,var(--orange),var(--pink));
+      box-shadow: 0 0 0 6px rgba(255,62,165,.12);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.02;
+      letter-spacing:-.8px;
+    }
+    .sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 52ch;
+    }
+
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      text-decoration:none;
+      font-weight: 650;
+      letter-spacing: .2px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.28);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+      backdrop-filter: blur(10px);
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      border: 0;
+      background: linear-gradient(120deg, var(--orange), var(--pink), var(--purple));
+      box-shadow: 0 20px 55px rgba(255,62,165,.22);
+    }
+    .btn.primary:hover{box-shadow: 0 26px 70px rgba(255,62,165,.30)}
+    .btn small{opacity:.9; font-weight:600}
+
+    .meta{
+      display:flex; gap:16px; flex-wrap:wrap;
+      margin-top:18px;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .meta b{color: rgba(255,255,255,.86); font-weight:650}
+
+    .card{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      border-radius: var(--radius);
+      padding: 18px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.30);
+    }
+    .countdown{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .countdown h3{margin:0; font-size:16px}
+    .bar{
+      height:10px; border-radius:999px; overflow:hidden;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .bar > i{
+      display:block; height:100%;
+      width: 72%;
+      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple), var(--blue));
+      filter:saturate(1.1);
+    }
+    .urgency{
+      display:grid; grid-template-columns: repeat(3,1fr); gap:10px;
+    }
+    .stat{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 12px;
+    }
+    .stat .k{font-size:18px; font-weight:800}
+    .stat .l{font-size:12px; color:var(--muted2); margin-top:2px}
+
+    /* SECTIONS */
+    .section{margin-top:34px}
+    .section h2{
+      margin: 0 0 12px;
+      font-size: 26px;
+      letter-spacing: -.3px;
+    }
+    .section p{margin:0; color:var(--muted); line-height:1.6}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    /* VIDEO */
+    .video-wrap{
+      position:relative;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      overflow:hidden;
+      background: linear-gradient(135deg, rgba(255,122,24,.10), rgba(34,211,238,.08), rgba(124,58,237,.10));
+      box-shadow: var(--shadow);
+    }
+    .video-wrap::before{
+      content:"";
+      position:absolute; inset:0;
+      /* Replace with a generated image for subtle motion/background */
+      background-image: url("YOUR_IMAGE_VIDEO_BG.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity:.35;
+      filter: blur(1px) saturate(1.1);
+      transform: scale(1.06);
+    }
+    .video{
+      position:relative;
+      aspect-ratio: 16 / 9;
+      display:flex; align-items:center; justify-content:center;
+      padding: 18px;
+      text-align:center;
+      background: linear-gradient(180deg, rgba(7,6,21,.35), rgba(7,6,21,.70));
+    }
+    .video .inner{
+      max-width: 560px;
+      border:1px dashed rgba(255,255,255,.28);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(0,0,0,.20);
+      backdrop-filter: blur(10px);
+    }
+    .play{
+      width:64px; height:64px; border-radius:18px;
+      background: linear-gradient(120deg, var(--orange), var(--pink), var(--purple));
+      display:inline-grid; place-items:center;
+      margin: 0 auto 10px;
+      box-shadow: 0 16px 50px rgba(255,62,165,.25);
+    }
+    .play svg{filter: drop-shadow(0 8px 18px rgba(0,0,0,.25))}
+    .video small{color:var(--muted2)}
+
+    /* GALLERY STRIP */
+    .strip{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .tile{
+      position:relative;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      min-height: 160px;
+      box-shadow: 0 16px 44px rgba(0,0,0,.28);
+    }
+    .tile::before{
+      content:"";
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.08) contrast(1.02);
+      opacity:.92;
+      transform: scale(1.03);
+    }
+    .tile.one::before{background-image:url("YOUR_IMAGE_TILE_1.jpg")}
+    .tile.two::before{background-image:url("YOUR_IMAGE_TILE_2.jpg")}
+    .tile.three::before{background-image:url("YOUR_IMAGE_TILE_3.jpg")}
+    .tile::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.65) 100%);
+    }
+    .tile .cap{
+      position:absolute; left:12px; right:12px; bottom:10px;
+      z-index:2;
+      font-size: 13px;
+      color: rgba(255,255,255,.86);
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      white-space:nowrap;
+    }
+
+    /* FEATURES */
+    .features{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feat{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding: 16px;
+    }
+    .feat b{display:block; margin-bottom:6px}
+    .feat span{color:var(--muted); font-size:14px; line-height:1.5}
+
+    /* PRICING */
+    .pricing{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .price{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(600px 400px at 10% 10%, rgba(255,122,24,.18), transparent 55%),
+        radial-gradient(600px 450px at 90% 10%, rgba(34,211,238,.14), transparent 60%),
+        rgba(255,255,255,.05);
+      padding: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.34);
+    }
+    .price .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.20);
+      color: rgba(255,255,255,.86);
+      font-size: 13px;
+    }
+    .money{
+      margin: 10px 0 4px;
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -1.1px;
+    }
+    .price ul{margin: 10px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+    .price li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .check{
+      width:18px; height:18px; border-radius:6px; flex:0 0 auto;
+      background: linear-gradient(120deg, var(--orange), var(--pink));
+      display:inline-grid; place-items:center;
+      margin-top:2px;
+    }
+
+    /* FORM */
+    .form{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      padding: 18px;
+    }
+    .form h3{margin:0 0 10px}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    label{display:block; font-size:12px; color:var(--muted2); margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 12px 12px;
+      color: rgba(255,255,255,.92);
+      outline:none;
+    }
+    textarea{min-height: 86px; resize: vertical}
+    input::placeholder, textarea::placeholder{color: rgba(255,255,255,.42)}
+    .form .fine{color:var(--muted2); font-size:12px; line-height:1.5; margin-top:10px}
+    .form .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    /* FOOTER */
+    footer{
+      margin-top: 36px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin-top: 26px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 920px){
+      .hero-inner{grid-template-columns: 1fr; padding: 22px}
+      .grid{grid-template-columns: 1fr}
+      .features{grid-template-columns: 1fr}
+      .strip{grid-template-columns: 1fr}
+      .pricing{grid-template-columns: 1fr}
+      .row{grid-template-columns: 1fr}
+      .nav .links{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="mark"></div>
+        <div>
+          <div style="font-size:14px;opacity:.9;">Summer Yacht Party Series</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:1px;">DJs • Live Performances • Lake Vibes</div>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#video">Watch</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#reserve">Reserve</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div>
+          <div class="pill-row">
+            <span class="pill"><span class="dot"></span> Sunset sessions</span>
+            <span class="pill">Limited capacity</span>
+            <span class="pill">Deposit = reserved spot</span>
+          </div>
+
+          <h1>Sunset. Sound. <span style="background:linear-gradient(120deg,var(--orange),var(--pink),var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;">Yacht Party.</span></h1>
+          <p class="sub">
+            A summer yacht party series with DJs + live performances—floating into golden hour and turning the lake into a dance floor.
+            Spots go fast. If you’re thinking about it, you’re already late.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#reserve">RSVP + Put Deposit</a>
+            <a class="btn" href="#video"><small>▶</small>&nbsp;Watch the vibe</a>
+            <a class="btn" href="#highlights">See highlights</a>
+          </div>
+
+          <div class="meta">
+            <span><b>Location:</b> Lake / Marina (edit)</span>
+            <span><b>Dates:</b> Summer 2025 (edit)</span>
+            <span><b>Music:</b> DJs + Live Acts</span>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="countdown">
+            <h3>🔥 Urgency / FOMO module</h3>
+            <div style="color:var(--muted); font-size:13px; line-height:1.5;">
+              Early access spots are typically gone first. Replace these numbers with real inventory.
+            </div>
+            <div class="bar" aria-label="availability"><i></i></div>
+
+            <div class="urgency">
+              <div class="stat">
+                <div class="k" id="spotsLeft">23</div>
+                <div class="l">Spots left</div>
+              </div>
+              <div class="stat">
+                <div class="k" id="deposit">$50</div>
+                <div class="l">Deposit to lock</div>
+              </div>
+              <div class="stat">
+                <div class="k" id="timer">01:58:32</div>
+                <div class="l">Hold timer (demo)</div>
+              </div>
+            </div>
+
+            <div style="margin-top:10px; color:var(--muted2); font-size:12px;">
+              *Demo timer + numbers — wire to your checkout/RSVP platform.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="section" id="video">
+      <h2>Watch the vibe</h2>
+      <p>Drop your sales video link here later. For now, this is a clean placeholder that matches the sunset theme.</p>
+
+      <div class="video-wrap" style="margin-top:14px;">
+        <!-- Option A: placeholder (default). -->
+        <div class="video">
+          <div class="inner">
+            <div class="play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M9 7l10 5-10 5V7z" fill="rgba(255,255,255,.95)"></path>
+              </svg>
+            </div>
+            <div style="font-weight:800; font-size:16px; letter-spacing:-.2px;">Video Placeholder</div>
+            <small>Replace this block with an embedded video (YouTube/Vimeo/Wistia) or a clickable poster.</small>
+
+            <!-- Option B: embed later by uncommenting below and pasting your URL -->
+            <!--
+            <div style="margin-top:12px;">
+              <iframe
+                width="100%" height="315"
+                src="https://www.youtube.com/embed/YOUR_ID"
+                title="Sales Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="border-radius:14px; border:1px solid rgba(255,255,255,.14);">
+              </iframe>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE STRIP / HIGHLIGHTS -->
+    <section class="section" id="highlights">
+      <h2>Highlights</h2>
+      <p>Swap these with the images you generated in this chat (DJ sunset shot, boat wide shot, jetski/banana boat shot, beach bonfire shot, float lounge shot, etc.).</p>
+
+      <div class="strip">
+        <div class="tile one">
+          <div class="cap">
+            <span>Golden-hour deck set</span>
+            <span class="chip">DJ + dancers</span>
+          </div>
+        </div>
+        <div class="tile two">
+          <div class="cap">
+            <span>Water toys + wild laughs</span>
+            <span class="chip">Jetski / banana boat</span>
+          </div>
+        </div>
+        <div class="tile three">
+          <div class="cap">
+            <span>Beach hang + bonfire</span>
+            <span class="chip">Sunset afterglow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feat">
+          <b>Curated sound</b>
+          <span>House / Afro / open-format / live performers — edit genres to match your lineup.</span>
+        </div>
+        <div class="feat">
+          <b>Actual room to dance</b>
+          <span>Spacious top deck + lower deck chill zones. Float, swim, vibe, repeat.</span>
+        </div>
+        <div class="feat">
+          <b>Camera-ready sunset</b>
+          <span>Orange–pink–purple skies, string lights, and a lake backdrop that does the work for you.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING / RESERVE -->
+    <section class="section" id="reserve">
+      <h2>Reserve your spot</h2>
+      <p>Collect deposits here (Stripe / Square / Eventbrite / custom checkout). This layout is ready to wire up.</p>
+
+      <div class="pricing">
+        <div class="price">
+          <span class="tag"><span class="dot"></span> Deposit locks your RSVP</span>
+          <div class="money">$50 <span style="font-size:14px;font-weight:650;color:var(--muted2)">deposit</span></div>
+          <div style="color:var(--muted); font-size:14px; line-height:1.6;">
+            Deposit reserves your spot and counts toward your final ticket total. Replace with your real pricing terms.
+          </div>
+
+          <ul>
+            <li><span class="check">✓</span> Priority boarding & wristband</li>
+            <li><span class="check">✓</span> Access to DJ sets + live performance segments</li>
+            <li><span class="check">✓</span> Lake hang: floats, swim time, photo moments</li>
+            <li><span class="check">✓</span> Limited capacity — when it’s gone, it’s gone</li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:16px;">
+            <a class="btn primary" href="#rsvpForm">RSVP + Deposit</a>
+            <a class="btn" href="#top">Back to top</a>
+          </div>
+        </div>
+
+        <div class="form" id="rsvpForm">
+          <h3>RSVP Form (placeholder)</h3>
+
+          <!-- Replace action with your form endpoint (Mailchimp/ConvertKit/custom) -->
+          <form action="#" method="post" onsubmit="return false;">
+            <div class="row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" placeholder="Hayden Erickson" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="(###) ###-####" />
+              </div>
+              <div>
+                <label for="date">Choose a date</label>
+                <select id="date" name="date">
+                  <option>Pick a date (edit)</option>
+                  <option>July 19 (example)</option>
+                  <option>Aug 2 (example)</option>
+                  <option>Aug 16 (example)</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="notes">Anything we should know?</label>
+            <textarea id="notes" name="notes" placeholder="Dietary needs, celebration, group size, etc."></textarea>
+
+            <div class="actions">
+              <button class="btn primary" type="submit">Proceed to Deposit</button>
+              <button class="btn" type="button" onclick="alert('Wire this button to Stripe/Eventbrite checkout link.')">Pay Deposit (demo)</button>
+            </div>
+
+            <div class="fine">
+              By reserving, you agree to event policies (edit). This form is a placeholder—connect it to your email/SMS + payment system.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <footer>
+      <div>© <span id="year"></span> Summer Yacht Party Series • All vibes, no spam.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#top" style="text-decoration:none;opacity:.85;">Top</a>
+        <a href="#video" style="text-decoration:none;opacity:.85;">Video</a>
+        <a href="#reserve" style="text-decoration:none;opacity:.85;">Reserve</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Minimal “demo urgency” timer
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    let seconds = 1 * 60 * 60 + 58 * 60 + 32; // 01:58:32 demo
+    const el = document.getElementById('timer');
+
+    setInterval(() => {
+      seconds = Math.max(0, seconds - 1);
+      const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
+      const m = String(Math.floor((seconds % 3600) / 60)).padStart(2,'0');
+      const s = String(seconds % 60).padStart(2,'0');
+      el.textContent = `${h}:${m}:${s}`;
+    }, 1000);
+  </script>
+
+  <!--
+    QUICK SETUP:
+    1) Replace these image URLs with your generated images:
+       - YOUR_IMAGE_HERO.jpg
+       - YOUR_IMAGE_VIDEO_BG.jpg
+       - YOUR_IMAGE_TILE_1.jpg / 2 / 3
+    2) Replace copy (dates, location, deposit amount).
+    3) Wire the “Proceed to Deposit” button to your checkout link.
+    4) Swap the video placeholder for an iframe (see Option B in the video section).
+  -->
+</body>
+</html>
