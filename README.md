@@ -36,7 +36,7 @@ This isn’t just a party.
 
 Every detail is designed for **maximum joy, movement, and connection**.
 
-![Party Deck at Sunset](/img/behind-DJ.PNG)
+![Water Activities](/img/banana-boat.PNG)
 
 
 ## ⏰ Limited Capacity = Real FOMO
@@ -73,7 +73,7 @@ Make sure you’re in the photos — not just liking them later.
 
 
 
-![Friends on Floats](/img/bonfire-chat.PNG)
+![Friends on Floats](/img/lake-float-chat.PNG)
 
 
 
