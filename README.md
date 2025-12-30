@@ -1,12 +1,9 @@
----
 
 # 🌅 Summer Sunset Yacht Party Series
 
 > **DJs. Live Performances. Sunset Energy. On the Water.**
 
----
-
-![Hero Image – Sunset Yacht Party](hero-sunset-yacht.jpg)
+![Hero Image – Sunset Yacht Party](/img/top-deck-dancing.PNG)
 
 ## 🚤 The Party Everyone Will Be Talking About
 
@@ -22,17 +19,12 @@ Picture this:
 This isn’t just a party.
 **It’s a summer memory in the making.**
 
----
+
 
 ## 🎥 Watch the Vibe
 
-> *(Replace this with your sales video)*
+[▶️ **WATCH THE EVENT VIDEO**](/img/reel-1.MP4)
 
-[▶️ **WATCH THE EVENT VIDEO**](#)
-
-*(Video Placeholder — embed Vimeo / YouTube link here)*
-
----
 
 ## 🔥 What Makes This Party Different
 
@@ -44,11 +36,8 @@ This isn’t just a party.
 
 Every detail is designed for **maximum joy, movement, and connection**.
 
----
+![Party Deck at Sunset](/img/behind-DJ.PNG)
 
-![Party Deck at Sunset](party-deck-sunset.jpg)
-
----
 
 ## ⏰ Limited Capacity = Real FOMO
 
@@ -61,7 +50,7 @@ This is an **intimate, high-energy experience** — not a packed nightclub.
 People *will* be posting about this.
 Make sure you’re in the photos — not just liking them later.
 
----
+
 
 ## 💸 How It Works
 
@@ -71,7 +60,7 @@ Make sure you’re in the photos — not just liking them later.
 
 👉 *Simple. Secure. First-come, first-served.*
 
----
+
 
 ## 🚨 Reserve Your Spot Now
 
@@ -82,11 +71,11 @@ Make sure you’re in the photos — not just liking them later.
 
 *(Button links to checkout / payment page)*
 
----
 
-![Friends on Floats at Sunset](floats-sunset.jpg)
 
----
+![Friends on Floats](/img/bonfire-chat.PNG)
+
+
 
 ## 🧡 Final Reminder
 
@@ -98,13 +87,13 @@ listen to it.
 
 We’ll see you on the water 🌊✨
 
----
+
 
 ### 📍 Event Details
 
-* **Location:** Lake (shared after RSVP)
+* **Location:** Lake Lanier
 * **Time:** Sunset → Night
 * **Dress Code:** Swimwear, festival fits, sunset colors encouraged
 * **Music:** DJs + Live Performances
 
----
+
